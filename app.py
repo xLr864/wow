@@ -10,7 +10,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 
 html_temp = """
    <head>
-      <title>Adivision By Chetan Khatri</title>
+      <title>submultiply By Chetan Khatri</title>
    </head>
    <div class="" style="background-color:blue;" >
    <div class="clearfix">           
@@ -24,11 +24,11 @@ html_temp = """
 st.markdown(html_temp,unsafe_allow_html=True)
   
 st.title("""
-        Addivision
+        submultiply
          """
          )
 file= st.file_uploader("Please upload image", type=("jpg", "png"))
-ch = st.selectbox("What do you want to do",("Addition of value 255","Division of value 0.5"))
+ch = st.selectbox("What do you want to do",("subtraction of value 255","multiplication of value 0.5"))
 
 
 import cv2 
