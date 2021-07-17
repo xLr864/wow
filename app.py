@@ -3,10 +3,15 @@ from PIL import Image
 import pickle
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 import os
-from werkzeug.utils import secure_filename
+
 st.set_option('deprecation.showfileUploaderEncoding', False)
+
 html_temp = """
+   <head>
+      <title>Adivision By Chetan Khatri</title>
+   </head>
    <div class="" style="background-color:blue;" >
    <div class="clearfix">           
    <div class="col-md-12">
@@ -19,24 +24,24 @@ html_temp = """
 st.markdown(html_temp,unsafe_allow_html=True)
   
 st.title("""
-        wow
+        Addivision
          """
          )
-file= st.file_uploader("Please upload image", type=("jpg", "png","tif"))
-ch = st.selectbox("What do you want to do",("Subtraction","Multiply"))
+file= st.file_uploader("Please upload image", type=("jpg", "png"))
+ch = st.selectbox("What do you want to do",("Addition of value 255","Division of value 0.5"))
 
 
 import cv2 
 from  PIL import Image, ImageOps
-def import_and_predict(image_data,img_2):
-  if(ch=="Subtraction"):
-    print("Subtraction\n")
-    image_data = cv2.subtract(image_data, my_img2)
-    cv2_imshow(img_add)
-  elif(ch=="Multiply"):
-    print("Multiply\n")
-    image_data = cv2.multiply(my_img1, 5)
-    cv2_imshow(image_data)
+def import_and_predict(my_img1):
+  if(ch=="subtraction of value 255"):
+    print("subtraction\n")
+    image_data = cv2.subtract(my_img1, 255)
+#     cv2.imshow("image_data",image_data)
+  elif(ch=="multiplication of value 0.5"):
+    print("multiplication\n")
+    image_data = cv2.multiply(my_img1, 0.5)
+#     cv2.imshow("image_data",image_data)
 
   st.image(image_data, use_column_width=True)
   return 0
@@ -48,7 +53,7 @@ else:
   st.image(file,caption='Uploaded Image.', use_column_width=True)
     
 if st.button("Perform "):
-  result=import_and_predict(my_img1,my_img2)
+  result=import_and_predict(my_img1)
   
 if st.button("About"):
   st.header(" Chetan")
