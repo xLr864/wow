@@ -10,7 +10,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 
 html_temp = """
    <head>
-      <title>submultiply By Chetan Khatri</title>
+      <title>Adivision By Chetan Khatri</title>
    </head>
    <div class="" style="background-color:blue;" >
    <div class="clearfix">           
@@ -24,7 +24,7 @@ html_temp = """
 st.markdown(html_temp,unsafe_allow_html=True)
   
 st.title("""
-        submultiply
+        Addivision
          """
          )
 file= st.file_uploader("Please upload image", type=("jpg", "png"))
@@ -35,11 +35,11 @@ import cv2
 from  PIL import Image, ImageOps
 def import_and_predict(my_img1):
   if(ch=="subtraction of value 255"):
-    print("subtraction\n")
+    print("Addition\n")
     image_data = cv2.subtract(my_img1, 255)
 #     cv2.imshow("image_data",image_data)
   elif(ch=="multiplication of value 0.5"):
-    print("multiplication\n")
+    print("Division\n")
     image_data = cv2.multiply(my_img1, 0.5)
 #     cv2.imshow("image_data",image_data)
 
